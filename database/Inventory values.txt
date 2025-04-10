@@ -1,0 +1,13 @@
+CREATE TABLE Barang 
+(Id_barang varchar (20)PRIMARY KEY,
+Nama_barang varchar (35),
+Harga_barang varchar(60),
+Stok_barang int (10),
+Id_jenis varchar (15))
+
+INSERT INTO barang VALUES 
+("B01","B02","B03","B04"),
+("Snack","Minuman","Deodorant","Sabun"),
+("Rp 10000","Rp 5000","Rp 15000","12000"),
+(1000,1050,350,500),
+("J01","J02","J03","J04")
