@@ -52,7 +52,8 @@
                  
                   <td>
 
-                      <a href='view_edit.php?Id_jenis=<?php echo $result['Id_jenis'];?>' class="btn btn-warning"><i class="fa-solid fa-pencil"></i> Edit</a>
+                      <a href='view_edit.php?Id_jenis=<?php echo $result['Id_jenis'];?>'
+                       class="btn btn-warning"><i class="fa-solid fa-pencil"></i> Edit</a>
                       <a onclick="return confirm('bener nih?')" class="btn btn-danger" ><i class="fa-solid fa-trash"></i> Hapus</a>
                   </td>
               </tr>

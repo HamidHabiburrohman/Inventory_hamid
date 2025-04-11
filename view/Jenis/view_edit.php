@@ -27,14 +27,14 @@
 </nav>
    <?php
    include '../../config/koneksi.php';
-   $Id_jenis =$_GET['Id_jenis'];
-   $query=mysqli_query($conn, "SELECT * FROM jenis WHERE Id_jenis ='$Id_jenis'");
+   $Id =$_GET['Id_jenis'];
+   $query=mysqli_query($conn, "SELECT * FROM jenis WHERE Id_jenis ='$Id'");
    $result=mysqli_fetch_array($query);
    ?>
 
   <div class="container">
     <h1>Edit jenis baru</h1>
-    <form action="proses_edit.php" method="POST">
+    <form action="proses_edit.php" method="GET">
             <div class="mb-3">
                 <label for="exampleInputEmaill" class="form-label">Id jenis</label>
                 <input type="text" class="form-control" value="<?php echo $result['Id_jenis'];?>" name="Id_jenis" id="exampleInputEmaill" required>

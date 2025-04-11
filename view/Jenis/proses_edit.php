@@ -2,7 +2,7 @@
 
 
 $Id_jenis = $_GET['Id_jenis'];
-$Nama_jenis = $_POST['Nama_jenis'];
+$Nama_jenis = $_GET['Nama_jenis'];
 
 
 
@@ -17,6 +17,6 @@ if($query) {
     echo "<script>window.location.href='index.php'</script>";
 } else {
     echo "<script>alert('Data gagal disimpan')</script>";
-    echo "<script>window.location.href='view_tambah.php'</script>";
+    echo "<script>window.location.href='view_edit.php'</script>";
 }
 ?>
