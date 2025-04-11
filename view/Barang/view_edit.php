@@ -25,30 +25,36 @@
     </div>
   </div>
 </nav>
+    <?php
+    $Id=$_GET['Id'];
+    include '../../config/koneksi.php';
+    $query=mysqli_query($conn, "SELECT * FROM barang WHERE Id_barang='$Id'");
+    $result=mysqli_fetch_array($query);
+    ?>
 
   <div class="container">
-    <h1>Tambah Data barang Baru</h1>
-    <form action="proses_tambah.php" method="POST">
+    <h1>Edit Data barang Baru</h1>
+    <form action="proses_edit.php" method="GET">
    
             <div class="mb-3">
                 <label for="exampleInputEmaill" class="form-label">Id barang</label>
-                <input type="text" class="form-control" name="Id_barang" id="exampleInputEmaill" aria-describedby="emailHellp">
+                <input type="text" class="form-control" value="<?php echo $result['Id_barang']?>" name="Id_barang" id="exampleInputEmaill" aria-describedby="emailHellp">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmaill" class="form-label">Nama barang</label>
-                <input type="text" class="form-control" name="Nama_barang" id="exampleInputEmaill" aria-describedby="emailHellp">
+                <input type="text" class="form-control" value="<?php echo $result['Nama_barang']?>" name="Nama_barang" id="exampleInputEmaill" aria-describedby="emailHellp">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmaill" class="form-label">Harga barang</label>
-                <input type="text" class="form-control" name="Harga_barang" id="exampleInputEmaill" aria-describedby="emailHellp">
+                <input type="text" class="form-control" value="<?php echo $result['Harga_barang']?>" name="Harga_barang" id="exampleInputEmaill" aria-describedby="emailHellp">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmaill" class="form-label">Stok barang</label>
-                <input type="text" class="form-control" name="Stok_barang" id="exampleInputEmaill" aria-describedby="emailHellp">
+                <input type="text" class="form-control" value="<?php echo $result['Stok_barang']?>" name="Stok_barang" id="exampleInputEmaill" aria-describedby="emailHellp">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmaill" class="form-label">Id jenis</label>
-                <input type="text" class="form-control" name="Id_jenis" id="exampleInputEmaill" aria-describedby="emailHellp">
+                <input type="text" class="form-control" value="<?php echo $result['Id_jenis']?>" name="Id_jenis" id="exampleInputEmaill" aria-describedby="emailHellp">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
     </form>

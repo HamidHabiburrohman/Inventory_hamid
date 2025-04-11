@@ -19,24 +19,29 @@
           <a class="nav-link active" aria-current="page" href="">Jenis</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../Barang/index.php">Barang</a>
+          <a class="nav-link " href="../Barang/index.php">Barang</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
+   <?php
+   include '../../config/koneksi.php';
+   $Id_jenis =$_GET['Id_jenis'];
+   $query=mysqli_query($conn, "SELECT * FROM jenis WHERE Id_jenis ='$Id_jenis'");
+   $result=mysqli_fetch_array($query);
+   ?>
 
   <div class="container">
-    <h1>Tambah jenis barang Baru</h1>
-    <form action="proses_tambah.php" method="POST">
-   
+    <h1>Edit jenis baru</h1>
+    <form action="proses_edit.php" method="POST">
             <div class="mb-3">
                 <label for="exampleInputEmaill" class="form-label">Id jenis</label>
-                <input type="text" class="form-control" name="Id_jenis" id="exampleInputEmaill" aria-describedby="emailHellp">
+                <input type="text" class="form-control" value="<?php echo $result['Id_jenis'];?>" name="Id_jenis" id="exampleInputEmaill" required>
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmaill" class="form-label">Nama jenis</label>
-                <input type="text" class="form-control" name="Nama_jenis" id="exampleInputEmaill" aria-describedby="emailHellp">
+                <input type="text" class="form-control" value="<?php echo $result['Nama_jenis'];?>" name="Nama_jenis" id="exampleInputEmaill" required>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
     </form>

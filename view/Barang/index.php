@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <title>Document</title>
 </head>
@@ -45,7 +46,7 @@
               $query = mysqli_query($conn, "SELECT * FROM barang");
               $no = 1;
               if(mysqli_num_rows($query)){
-                  echo "Data Barang ditemukan";
+                  echo "";
                   while($result = mysqli_fetch_assoc($query)){
               ?>
               <tr>
@@ -56,15 +57,14 @@
                   <td><?php echo $result['Id_jenis'] ?></td>
                   <td>
 
-                      <a href='view_tambah.php' class="btn btn-warning">Tambah</a>
-                      <a onclick="return confirm('bener nih?')" class="btn btn-danger">Hapus</a>
+                      <a  class="btn btn-warning btn-sm" href="view_edit.php?Id=<?php echo $result['Id_barang']?>">
+                      <i class="fa-solid fa-pencil"></i> Edit</a>
+                      <a href="proses_hapus.php?Id=<?php echo $result['Id_barang']?>" onclick="return confirm('bener nih?') "class="btn btn-danger btn-sm"> <i class="fa-solid fa-trash"></i> Hapus</a>
                   </td>
               </tr>
               <?php
                   $no++;
                   }
-              } else {
-                  echo "Data Barang tidak ditemukan";
               } 
         ?>
                         
